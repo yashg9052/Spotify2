@@ -13,7 +13,7 @@ export const isAuth = async (
 ): Promise<void> => {
   try {
     const token = req.headers.token as string;
-
+    console.log(token)
     if (!token) {
       res.status(403).json({
         message: "Please Login",
@@ -24,7 +24,7 @@ export const isAuth = async (
 
     const decodedValue = jwt.verify(
       token,
-      process.env.JWT_SEC as string,
+      process.env.JWT_SECRET as string,
     ) as JwtPayload;
 
     if (!decodedValue || !decodedValue._id) {
