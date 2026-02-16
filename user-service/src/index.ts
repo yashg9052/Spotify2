@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
 import userRoutes from "./route.js";
+import cors from "cors"
 
 const connectDb = async () => {
   try {
@@ -15,6 +16,7 @@ const connectDb = async () => {
   }
 };
 const app = express();
+app.use(cors());
 app.use(express.json())
 const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
