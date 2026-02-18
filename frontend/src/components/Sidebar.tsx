@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import PlaylistCard from "./PlaylistCard";
-// import { useUserData } from "../context/UserContext";
+import { useUserdata } from "../context/UserContext";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  // const { user } = useUserData();
+  const { user } = useUserdata();
   return (
     <div className="w-[25%] h-full p-2 flex-col gap-2 text-white hidden lg:flex">
       <div className="bg-[#121212] h-[15%] rounded flex flex-col justify-around">
@@ -36,7 +36,7 @@ const Sidebar = () => {
           <PlaylistCard />
         </div>
 
-        {/* <div className="p-4 m-2 bg-[#121212] rounded font-semibold flex flex-col items-start gap-1 pl-4 mt-4">
+        <div className="p-4 m-2 bg-[#121212] rounded font-semibold flex flex-col items-start gap-1 pl-4 mt-4">
           <h1>Let's findsome podcasts to follow</h1>
           <p className="font-light">we'll keep you update on new episodes</p>
           <button className="px-4 py-1.5 bg-white text-black text-[15px] rounded-full mt-4">
@@ -51,7 +51,7 @@ const Sidebar = () => {
           >
             Admin Dashboard
           </button>
-        )} */}
+        )}
       </div>
     </div>
   );
